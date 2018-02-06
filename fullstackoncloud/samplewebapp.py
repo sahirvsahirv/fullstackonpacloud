@@ -42,12 +42,14 @@ def indexing():
 
 @app.route('/address/')
 def showaddresswithoutparam(addr):
+    print "address without param"
     return('<h1>The address is {} </h1>'.format(myownodu))
 
 #Route decorator
 #pass param in url that is picke up from client side and gets <addr> value in the backend
 @app.route('/address/<addr>')
 def showaddress(addr):
+    print "address with param"
     return('<h1>The address is {} </h1>'.format(addr))
 
 #now you want a template generating this response since you do not want to add html code here
