@@ -94,12 +94,13 @@ def showmap():
         jsonData = json.loads(jsonRaw)
         print(jsonData)
 
-        if jsonData['status'] == 'OK':
-            results = jsonData['results'][0]
-            finList = [results['formatted_address'], results['geometry']['location']['lat'], results['geometry']['location']['lng']]
-            print(finList)
+        #if jsonData['status'] == 'OK':
+        #    results = jsonData['results'][0]
+        #    finList = [results['formatted_address'], results['geometry']['location']['lat'], results['geometry']['location']['lng']]
+        #    print(finList)
 
-    return render_template('showmap.html', form=form, address=finList)
+    #return render_template('showmap.html', form=form, address=finList)
+    return "hellop"
 
 
 #you just sent data to javascript
