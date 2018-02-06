@@ -1,18 +1,18 @@
 from flask import Flask
 from flask import render_template
-#from flask import flash
-#from flask import request
-#from flask import redirect
-#from flask import url_for
-#from flask_wtf import Form
-#from wtforms import StringField, SubmitField
-#from wtforms.validators import DataRequired
-#from flask_wtf.csrf import CSRFProtect
+from flask import flash
+from flask import request
+from flask import redirect
+from flask import url_for
+from flask_wtf import Form
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
+from flask_wtf.csrf import CSRFProtect
 #This import is required for the wtf import in showmap.html to work
-#from flask_bootstrap import Bootstrap
-#import urllib3
-#from bs4 import BeautifulSoup
-#import json
+from flask_bootstrap import Bootstrap
+import urllib3
+from bs4 import BeautifulSoup
+import json
 
 print "1"
 
@@ -20,9 +20,9 @@ print "1"
 app = Flask(__name__)
 
 print "2"
-#csrf = CSRFProtect(app)
-#app.secret_key = 'myflaskapp'
-#bootstrap = Bootstrap(app)
+csrf = CSRFProtect(app)
+app.secret_key = 'myflaskapp'
+bootstrap = Bootstrap(app)
 #request hooks and g contexts to store data common for all view functions
 #template contains the text of a response with the variables whose values will be known in the request
 #deorator for the main page
