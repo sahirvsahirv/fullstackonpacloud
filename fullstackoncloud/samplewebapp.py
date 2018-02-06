@@ -43,7 +43,7 @@ def indexing():
 @app.route('/addresswp/')
 def showaddresswithoutparam():
     print "address without param"
-    return('<h1>The address is {} </h1>'.format(myownodu))
+    return('<h1>The address is {} </h1>'.format("myownodu"))
 
 #Route decorator
 #pass param in url that is picke up from client side and gets <addr> value in the backend
