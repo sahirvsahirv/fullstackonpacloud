@@ -65,7 +65,7 @@ def showaddressthroughtemplate(address):
 
 class SubmitAddressForm(Form):
     address = StringField('Enter current address', validators=[DataRequired()])
-    submitButton =  SubmitField('Submit')
+    submitButton =   SubmitField('Submit')
 
 
 @app.route('/showmap', methods=['GET', 'POST'])
