@@ -14,8 +14,12 @@ from flask import render_template
 #from bs4 import BeautifulSoup
 #import json
 
+print "1"
+
 #flask instance stored in app
 app = Flask(__name__)
+
+print "2"
 #csrf = CSRFProtect(app)
 #app.secret_key = 'myflaskapp'
 #bootstrap = Bootstrap(app)
