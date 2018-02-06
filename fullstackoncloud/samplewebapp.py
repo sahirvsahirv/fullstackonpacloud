@@ -40,8 +40,8 @@ def indexing():
     #return "just started"
 
 
-@app.route('/address/')
-def showaddresswithoutparam(addr):
+@app.route('/addresswp/')
+def showaddresswithoutparam():
     print "address without param"
     return('<h1>The address is {} </h1>'.format(myownodu))
 
