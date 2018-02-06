@@ -45,6 +45,7 @@ def showaddresswithoutparam():
     print "address without param"
     return('<h1>The address is {} </h1>'.format("myownodu"))
 
+#http://gowricg.pythonanywhere.com/address/ody
 #Route decorator
 #pass param in url that is picke up from client side and gets <addr> value in the backend
 @app.route('/address/<addr>')
@@ -101,13 +102,13 @@ def showmap():
         jsonData = json.loads(jsonRaw)
         print(jsonData)
 
-        #if jsonData['status'] == 'OK':
-        #    results = jsonData['results'][0]
-        #    finList = [results['formatted_address'], results['geometry']['location']['lat'], results['geometry']['location']['lng']]
-        #    print(finList)
+        if jsonData['status'] == 'OK':
+            results = jsonData['results'][0]
+            finList = [results['formatted_address'], results['geometry']['location']['lat'], results['geometry']['location']['lng']]
+            print(finList)
 
-    #return render_template('showmap.html', form=form, address=finList)
-    return "hellop"
+    return render_template('showmap.html', form=form, address=finList)
+    #return "hellop"
 
 
 #you just sent data to javascript
