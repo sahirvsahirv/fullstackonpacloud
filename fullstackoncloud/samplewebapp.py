@@ -41,7 +41,7 @@ def indexing():
 
 #Route decorator
 #pass param in url that is picke up from client side and gets <addr> value in the backend
-#@app.route('/address/<addr>')
+@app.route('/address/<addr>')
 def showaddress(addr):
     return('<h1>The address is {} </h1>'.format(addr))
 
