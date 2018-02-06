@@ -39,6 +39,11 @@ def indexing():
     #returns from back end to front end
     #return "just started"
 
+
+@app.route('/address/')
+def showaddresswithoutparam(addr):
+    return('<h1>The address is {} </h1>'.format(myownodu))
+
 #Route decorator
 #pass param in url that is picke up from client side and gets <addr> value in the backend
 @app.route('/address/<addr>')
