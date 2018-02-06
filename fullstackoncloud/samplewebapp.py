@@ -1,24 +1,24 @@
 from flask import Flask
 from flask import render_template
-from flask import flash
-from flask import request
-from flask import redirect
-from flask import url_for
-from flask_wtf import Form
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
+#from flask import flash
+#from flask import request
+#from flask import redirect
+#from flask import url_for
+#from flask_wtf import Form
+#from wtforms import StringField, SubmitField
+#from wtforms.validators import DataRequired
 #from flask_wtf.csrf import CSRFProtect
 #This import is required for the wtf import in showmap.html to work
-from flask_bootstrap import Bootstrap
-import urllib3
-from bs4 import BeautifulSoup
-import json
+#from flask_bootstrap import Bootstrap
+#import urllib3
+#from bs4 import BeautifulSoup
+#import json
 
 #flask instance stored in app
 app = Flask(__name__)
 #csrf = CSRFProtect(app)
-app.secret_key = 'myflaskapp'
-bootstrap = Bootstrap(app)
+#app.secret_key = 'myflaskapp'
+#bootstrap = Bootstrap(app)
 #request hooks and g contexts to store data common for all view functions
 #template contains the text of a response with the variables whose values will be known in the request
 #deorator for the main page
@@ -74,8 +74,7 @@ def indexing():
 #        address = form.address.data
 #        print("addr on the server side=  " + address)
 #        form.address.data = ''
-#        flash('your address is  ' + address)
-
+#        flash('your addr
 #        GOOGLE_MAPS_API_URL = 'https://maps.googleapis.com/maps/api/geocode/json?'
 #        addP = "address=" + address.replace(" ", "+", -1)
 #        apikey = 'AIzaSyCI2tEqnQfGLFEEsvO4xjOppywbXtYdutw'
