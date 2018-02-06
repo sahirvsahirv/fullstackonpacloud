@@ -94,7 +94,7 @@ def showmap():
         jsonData = json.loads(jsonRaw)
         print(jsonData)
 
-    if jsonData['status'] == 'OK':
+        if jsonData['status'] == 'OK':
             results = jsonData['results'][0]
             finList = [results['formatted_address'], results['geometry']['location']['lat'], results['geometry']['location']['lng']]
             print(finList)
