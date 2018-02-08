@@ -14,6 +14,11 @@ import urllib3
 from bs4 import BeautifulSoup
 import json
 
+
+from scrapy.crawler import CrawlerProcess
+from makerspacescraper.makerspacescraper.spiders import MakerspacebotSpider
+
+
 print "1"
 
 #flask instance stored in app
@@ -84,6 +89,13 @@ def showmap():
     print("show map func")
     form = SubmitAddressForm()
     finList = []
+
+    print("calling scrapy here")
+    process = CrawlerProcess(get_project_settings())
+    process.crawl(MakerspacebotSpider)
+    process.start()
+    print("scraping over - check for a file getting created")
+    
     if request.method == 'POST':
         address = form.address.data
         print("addr on the server side=  " + address)
