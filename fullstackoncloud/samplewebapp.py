@@ -91,7 +91,7 @@ def showmap():
     form = SubmitAddressForm()
     finList = []
 
-    print("calling scrapy here")
+    #print("calling scrapy here")
     #subprocess.check_output(['scrapy', 'crawl', "makerspacebot", "-o", "out.json"])
     #with open("out.json") as items_file:
     #    return items_file.read()
@@ -100,7 +100,7 @@ def showmap():
     #process.crawl(MakerspacebotSpider)
     #process.start()
 
-    print("scraping over - check for a file getting created")
+    #print("scraping over - check for a file getting created")
     
     if request.method == 'POST':
         address = form.address.data
