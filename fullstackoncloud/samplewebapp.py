@@ -17,7 +17,7 @@ import json
 
 from scrapy.crawler import CrawlerProcess
 from makerspacescraper.makerspacescraper.spiders.makerspacebot import MakerspacebotSpider
-
+from scrapy.utils.project import get_project_settings
 
 print "1"
 
