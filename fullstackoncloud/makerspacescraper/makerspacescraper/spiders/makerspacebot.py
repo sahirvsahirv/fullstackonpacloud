@@ -81,19 +81,22 @@ class MakerspacebotSpider(scrapy.Spider):
 
         #response.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " product-item view-list ")]')
         #response.css('div.product-item.view-list')
-        urls = response.css('div.mk-fancy-table.mk-shortcode.table-style2')
-        msnames = urls.xpath('//table//tr//td[2]//text()').extract()
+
+
+        #uncomment
+        #urls = response.css('div.mk-fancy-table.mk-shortcode.table-style2')
+        #msnames = urls.xpath('//table//tr//td[2]//text()').extract()
         #adding //@href without the text gets all the urls
-        msurls = urls.xpath('//table//tr//td[4]//@href').extract()
+        #msurls = urls.xpath('//table//tr//td[4]//@href').extract()
 
         print("in parse method")
 
-        itemarr = []
-        for count in range(len(msnames)-1):
-            item = MakerSpaces()
-            item['url'] = msurls[count]
-            item['name'] = msnames[count]
-            itemarr.append(item)
+        #itemarr = []
+        #for count in range(len(msnames)-1):
+            #item = MakerSpaces()
+            #item['url'] = msurls[count]
+            #item['name'] = msnames[count]
+            #itemarr.append(item)
             #print("item is = " + str(itemarr[count]))
             #yield every item and can't yield a list
 
@@ -101,6 +104,9 @@ class MakerspacebotSpider(scrapy.Spider):
             #yield itemarr[count]
             print(itemarr[count])
 
+        #till here uncomment
+
+            
         #item = MakerSpaces()
         #item['url'] = msurls
         #item['name'] = msnames
