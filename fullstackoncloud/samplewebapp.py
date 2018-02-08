@@ -13,7 +13,7 @@ from flask_bootstrap import Bootstrap
 import urllib3
 from bs4 import BeautifulSoup
 import json
-
+import subprocess
 
 from scrapy.crawler import CrawlerProcess
 from makerspacescraper.makerspacescraper.spiders.makerspacebot import MakerspacebotSpider
@@ -91,9 +91,14 @@ def showmap():
     finList = []
 
     print("calling scrapy here")
-    #process = CrawlerProcess(get_project_settings())
+    subprocess.check_output(['scrapy', 'crawl', "makerspacebot", "-o", "out.json"])
+    with open("out.json") as items_file:
+        return items_file.read()
+    
+    #process = CrawlerProcess()
     #process.crawl(MakerspacebotSpider)
     #process.start()
+
     print("scraping over - check for a file getting created")
     
     if request.method == 'POST':
