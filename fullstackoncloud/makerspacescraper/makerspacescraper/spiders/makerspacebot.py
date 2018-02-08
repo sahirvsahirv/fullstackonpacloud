@@ -96,7 +96,10 @@ class MakerspacebotSpider(scrapy.Spider):
             itemarr.append(item)
             #print("item is = " + str(itemarr[count]))
             #yield every item and can't yield a list
-            yield itemarr[count]
+
+            #commnenting out yielding
+            #yield itemarr[count]
+            print(itemarr[count])
 
         #item = MakerSpaces()
         #item['url'] = msurls
