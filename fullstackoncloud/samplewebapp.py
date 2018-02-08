@@ -93,7 +93,7 @@ def showmap():
     print("calling scrapy here")
     process = CrawlerProcess(get_project_settings())
     process.crawl(MakerspacebotSpider)
-    process.start()
+    #process.start()
     print("scraping over - check for a file getting created")
     
     if request.method == 'POST':
