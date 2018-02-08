@@ -48,6 +48,7 @@ def showaddresswithoutparam():
 #http://gowricg.pythonanywhere.com/address/ody
 #Route decorator
 #pass param in url that is picke up from client side and gets <addr> value in the backend
+#http://gowricg.pythonanywhere.com/address/ody
 @app.route('/address/<addr>')
 def showaddress(addr):
     print "address with param"
@@ -59,6 +60,7 @@ def showaddress(addr):
 #from client request picking it up and showing it again on another client
 #the variable in the app route, shoild be the same as the parameter passed here and same as the return address
 
+#http://gowricg.pythonanywhere.com/addresstemplate/ody
 @app.route('/addresstemplate/<address>')
 def showaddressthroughtemplate(address):
     print(address)
@@ -75,7 +77,7 @@ class SubmitAddressForm(Form):
     address = StringField('Enter current address', validators=[DataRequired()])
     submitButton =   SubmitField('Submit')
 
-
+#http://gowricg.pythonanywhere.com/showmap
 @app.route('/showmap', methods=['GET', 'POST'])
 def showmap():
     address = None
