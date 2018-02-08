@@ -21,7 +21,7 @@ class MakerSpaces(scrapy.Item):
 class MakerspacebotSpider(scrapy.Spider):
     ##name with which you run the command line - scrapy crawl ,akerspacebot
     name = 'makerspacebot'
-
+    print("started with the spider")
 
     allowed_domains = ['diyhacking.com']
     #allowed_domains = ['en.wikipedia.org']
@@ -30,8 +30,9 @@ class MakerspacebotSpider(scrapy.Spider):
 
         #start_urls = ['http://en.wikipedia.org']
     except Exception as e:
-        logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
-        logging.debug('There was an exception in the code:  ' + str(e))
+        print("exception" + str(e))
+        #logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+        #logging.debug('There was an exception in the code:  ' + str(e))
         #sys.exit()
 
     #def start_requests(self):
@@ -43,17 +44,20 @@ class MakerspacebotSpider(scrapy.Spider):
     def parse_bot(self, response):
         try:
 
-            logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
-            logging.debug('In the parse method:')
+            #logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+            #logging.debug('In the parse method:')
+            print("in the parse method")
             hxs = scrapy.Selector(text=response).xpath('//div[@id="mk-page-section-5a5dd165039f5"]/text()').extract()
-            logging.debug('In the parse method:  ' + str(hxs))
+            #logging.debug('In the parse method:  ' + str(hxs))
         except Exception as e:
-            logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
-            logging.debug('There was an exception in the code:  ' + str(e))
+            #logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+            #logging.debug('There was an exception in the code:  ' + str(e))
+            print(str(e) + "in scrapy selector")
             #sys.exit()
         finally:
-            logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
-            logging.debug('There was an exception in the code - in finally:  ')
+            #logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+            #logging.debug('There was an exception in the code - in finally:  ')
+            print("in finally")
             #sys.exit()
     def err_bot(self, failure):
         self.logger.error(repr(failure))
@@ -82,6 +86,7 @@ class MakerspacebotSpider(scrapy.Spider):
         #adding //@href without the text gets all the urls
         msurls = urls.xpath('//table//tr//td[4]//@href').extract()
 
+        print("in parse method")
 
         itemarr = []
         for count in range(len(msnames)-1):
@@ -113,11 +118,11 @@ class MakerspacebotSpider(scrapy.Spider):
         #item['url'] = urls
         #return item
 
-        logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
-        logging.debug('In the parse method:')
+        #logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+        #logging.debug('In the parse method:')
         hxs = scrapy.Selector(response)
-        logging.debug('In the parse method:  ' + str(hxs))
-
+        #logging.debug('In the parse method:  ' + str(hxs))
+        print("in parse method " + str(hxs))
 
 
 
