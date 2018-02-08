@@ -84,25 +84,25 @@ class MakerspacebotSpider(scrapy.Spider):
 
 
         #uncomment
-        #urls = response.css('div.mk-fancy-table.mk-shortcode.table-style2')
-        #msnames = urls.xpath('//table//tr//td[2]//text()').extract()
+        urls = response.css('div.mk-fancy-table.mk-shortcode.table-style2')
+        msnames = urls.xpath('//table//tr//td[2]//text()').extract()
         #adding //@href without the text gets all the urls
-        #msurls = urls.xpath('//table//tr//td[4]//@href').extract()
+        msurls = urls.xpath('//table//tr//td[4]//@href').extract()
 
         print("in parse method")
 
-        #itemarr = []
-        #for count in range(len(msnames)-1):
-            #item = MakerSpaces()
-            #item['url'] = msurls[count]
-            #item['name'] = msnames[count]
-            #itemarr.append(item)
-            #print("item is = " + str(itemarr[count]))
+        itemarr = []
+        for count in range(len(msnames)-1):
+            item = MakerSpaces()
+            item['url'] = msurls[count]
+            item['name'] = msnames[count]
+            itemarr.append(item)
+            print("item is = " + str(itemarr[count]))
             #yield every item and can't yield a list
 
             #commnenting out yielding
-            #yield itemarr[count]
-            print(itemarr[count])
+            yield itemarr[count]
+            #print(itemarr[count])
 
         #till here uncomment
 
